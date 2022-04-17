@@ -40,9 +40,9 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'pejabat_penilai' => [
+        'pejabat_penilais' => [
             'driver' => 'session',
-            'provider' => 'pejabat_penilai',
+            'provider' => 'pejabat_penilais',
         ],
     ],
 
@@ -68,7 +68,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'pejabat_penilai' => [
+        'pejabat_penilais' => [
             'driver' => 'eloquent',
             'model' => App\Models\PejabatPenilai::class,
         ],

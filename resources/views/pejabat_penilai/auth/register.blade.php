@@ -11,7 +11,7 @@
 
         <h2 class="text-4xl fontbold text-center">Pejabat Penilai Register</h2>
 
-        <form method="POST" action="{{ route('pejabat_penilai.register') }}">
+        <form method="POST" action="{{ route('pejabat_penilais.register') }}">
             @csrf
 
             <!-- Name -->
@@ -48,7 +48,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('pejabat_penilai.login') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('pejabat_penilais.login') }}">
                     {{ __('Already registered?') }}
                 </a>
 

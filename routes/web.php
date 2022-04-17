@@ -25,6 +25,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/pejabat_penilai/dashboard', function () {
     return view('pejabat_penilai.dashboard');
-})->middleware(['auth:pejabat_penilai'])->name('pejabat_penilai.dashboard');
+})->middleware(['auth:pejabat_penilais'])->name('pejabat_penilai.dashboard');
 
 require __DIR__.'/pejabatpenilaiauth.php';

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pejabat_penilai', function (Blueprint $table) {
+        Schema::create('pejabat_penilais', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pejabat_penilai');
+        Schema::dropIfExists('pejabat_penilais');
     }
 };

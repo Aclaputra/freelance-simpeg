@@ -1,7 +1,7 @@
 <x-pejabat_penilai-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} {{ Auth::guard('pejabat_penilai')->user()->name }} - ({{ Auth::guard('pejabat_penilai')->user()->email }})
+            {{ __('Dashboard') }} {{ Auth::guard('pejabat_penilais')->user()->name }} - ({{ Auth::guard('pejabat_penilais')->user()->email }})
         </h2>
     </x-slot>
 
