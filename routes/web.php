@@ -28,3 +28,15 @@ Route::get('/pejabat_penilai/dashboard', function () {
 })->middleware(['auth:pejabat_penilais'])->name('pejabat_penilai.dashboard');
 
 require __DIR__.'/pejabatpenilaiauth.php';
+
+Route::get('/atasan_pejabat_penilai/dashboard', function () {
+    return view('atasan_pejabat_penilai.dashboard');
+})->middleware(['auth:atasan_pejabat_penilais'])->name('atasan_pejabat_penilai.dashboard');
+
+require __DIR__.'/atasanpejabatpenilaiauth.php';
+
+Route::get('/kepala_urusan_kepegawaian/dashboard', function () {
+    return view('kepala_urusan_kepegawaian.dashboard');
+})->middleware(['auth:kepala_urusan_kepegawaians'])->name('kepala_urusan_kepegawaian.dashboard');
+
+require __DIR__.'/kepalaurusankepegawaianauth.php';
