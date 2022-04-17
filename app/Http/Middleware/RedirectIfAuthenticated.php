@@ -25,6 +25,9 @@ class RedirectIfAuthenticated
             if ($guard =='pejabat_penilais' && Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::PEJABAT_PENILAI_HOME);
             }
+            if ($guard =='atasan_pejabat_penilais' && Auth::guard($guard)->check()) {
+                return redirect(RouteServiceProvider::ATASAN_PEJABAT_PENILAI_HOME);
+            }
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
