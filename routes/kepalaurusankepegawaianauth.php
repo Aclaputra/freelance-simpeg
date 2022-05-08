@@ -1,5 +1,5 @@
 <?php
-
+// kepala urusan kepegawaian routes
 use App\Http\Controllers\KepalaUrusanKepegawaianAuth\AuthenticatedSessionController;
 use App\Http\Controllers\KepalaUrusanKepegawaianAuth\ConfirmablePasswordController;
 use App\Http\Controllers\KepalaUrusanKepegawaianAuth\EmailVerificationNotificationController;
