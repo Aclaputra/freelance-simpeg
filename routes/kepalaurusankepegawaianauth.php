@@ -10,7 +10,7 @@ use App\Http\Controllers\KepalaUrusanKepegawaianAuth\RegisteredUserController;
 use App\Http\Controllers\KepalaUrusanKepegawaianAuth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['guest:kepala_urusan_kepegawaians'], 'prefix' => 'kepala_urusan_kepegawaians','as' => 'kepala_urusan_kepegawaians.'], function() {
+Route::group(['middleware' => ['guest:kepala_urusan_kepegawaian'], 'prefix' => 'kepala_urusan_kepegawaian','as' => 'kepala_urusan_kepegawaian.'], function() {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
@@ -34,7 +34,7 @@ Route::group(['middleware' => ['guest:kepala_urusan_kepegawaians'], 'prefix' => 
                 ->name('password.update');
 });
 
-Route::group(['middleware' => ['auth:kepala_urusan_kepegawaians'], 'prefix' => 'kepala_urusan_kepegawaians','as' => 'kepala_urusan_kepegawaians.'], function() {
+Route::group(['middleware' => ['auth:kepala_urusan_kepegawaian'], 'prefix' => 'kepala_urusan_kepegawaian','as' => 'kepala_urusan_kepegawaian.'], function() {
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
                 ->name('verification.notice');
 

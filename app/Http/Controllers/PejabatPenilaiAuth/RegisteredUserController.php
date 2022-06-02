@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::guard('pejabat_penilais')->login($user);
+        Auth::guard('pejabat_penilai')->login($user);
 
         return redirect(RouteServiceProvider::PEJABAT_PENILAI_HOME);
     }

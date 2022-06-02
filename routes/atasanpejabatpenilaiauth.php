@@ -10,7 +10,7 @@ use App\Http\Controllers\AtasanPejabatPenilaiAuth\RegisteredUserController;
 use App\Http\Controllers\AtasanPejabatPenilaiAuth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['guest:atasan_pejabat_penilais'], 'prefix' => 'atasan_pejabat_penilais','as' => 'atasan_pejabat_penilais.'], function() {
+Route::group(['middleware' => ['guest:atasan_pejabat_penilai'], 'prefix' => 'atasan_pejabat_penilai','as' => 'atasan_pejabat_penilai.'], function() {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
@@ -34,7 +34,7 @@ Route::group(['middleware' => ['guest:atasan_pejabat_penilais'], 'prefix' => 'at
                 ->name('password.update');
 });
 
-Route::group(['middleware' => ['auth:atasan_pejabat_penilais'], 'prefix' => 'atasan_pejabat_penilais','as' => 'atasan_pejabat_penilais.'], function() {
+Route::group(['middleware' => ['auth:atasan_pejabat_penilai'], 'prefix' => 'atasan_pejabat_penilai','as' => 'atasan_pejabat_penilai.'], function() {
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
                 ->name('verification.notice');
 

@@ -22,14 +22,17 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if ($guard =='pejabat_penilais' && Auth::guard($guard)->check()) {
+            if ($guard =='pejabat_penilai' && Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::PEJABAT_PENILAI_HOME);
             }
-            if ($guard =='atasan_pejabat_penilais' && Auth::guard($guard)->check()) {
+            if ($guard =='atasan_pejabat_penilai' && Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::ATASAN_PEJABAT_PENILAI_HOME);
             }
+            if ($guard =='kepala_urusan_kepegawaian' && Auth::guard($guard)->check()) {
+                return redirect(RouteServiceProvider::KEPALA_URUSAN_KEPEGAWAIAN_HOME);
+            }
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                return redirect(RouteServiceProvider::PEJABAT_PENILAI_HOME);
             }
         }
 

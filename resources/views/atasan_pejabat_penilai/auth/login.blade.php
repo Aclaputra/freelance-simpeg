@@ -14,7 +14,7 @@
 
         <h2 class="text-4xl fontbold text-center">Atasan Pejabat Penilai Login</h2>
 
-        <form method="POST" action="{{ route('atasan_pejabat_penilais.login') }}">
+        <form method="POST" action="{{ route('atasan_pejabat_penilai.login') }}">
             @csrf
 
             <!-- Email Address -->
@@ -44,7 +44,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('atasan_pejabat_penilais.password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('atasan_pejabat_penilai.password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif

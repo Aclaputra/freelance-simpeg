@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class KepalaUrusanKepegawaian extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $guard = 'kepala_urusan_kepegawaians';
+    protected $guard = 'kepala_urusan_kepegawaian';
     
     /**
      * The attributes that are mass assignable.

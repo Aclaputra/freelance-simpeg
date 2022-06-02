@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {
@@ -25,18 +25,22 @@ require __DIR__.'/auth.php';
 
 Route::get('/pejabat_penilai/dashboard', function () {
     return view('pejabat_penilai.dashboard');
-})->middleware(['auth:pejabat_penilais'])->name('pejabat_penilai.dashboard');
+})->middleware(['auth:pejabat_penilai'])->name('pejabat_penilai.dashboard');
 
 require __DIR__.'/pejabatpenilaiauth.php';
 
 Route::get('/atasan_pejabat_penilai/dashboard', function () {
     return view('atasan_pejabat_penilai.dashboard');
-})->middleware(['auth:atasan_pejabat_penilais'])->name('atasan_pejabat_penilai.dashboard');
+})->middleware(['auth:atasan_pejabat_penilai'])->name('atasan_pejabat_penilai.dashboard');
 
 require __DIR__.'/atasanpejabatpenilaiauth.php';
 
 Route::get('/kepala_urusan_kepegawaian/dashboard', function () {
     return view('kepala_urusan_kepegawaian.dashboard');
-})->middleware(['auth:kepala_urusan_kepegawaians'])->name('kepala_urusan_kepegawaian.dashboard');
+})->middleware(['auth:kepala_urusan_kepegawaian'])->name('kepala_urusan_kepegawaian.dashboard');
 
 require __DIR__.'/kepalaurusankepegawaianauth.php';
+
+Route::get('/coba', function () {
+    return view('coba');
+});
