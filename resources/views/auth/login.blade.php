@@ -12,7 +12,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <h2 class="text-4xl fontbold text-center">Pegawai Login</h2>
+        <h2 class="text-4xl fontbold text-center">Login Sebagai Pegawai</h2>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -40,6 +40,34 @@
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
+                <hr>
+                <div style="text-align: center">
+                    <h1 class="m-2">Dashboard lain : </h1>
+                    <div style="width: 320px; margin: 0 auto;">
+                        <ul style=" text-align: left">
+                            <li>
+                                <a href="{{ url('login') }}">
+                                    Pegawai Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('pejabat_penilai/login') }}">
+                                    Pejabat Penilai Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/atasan_pejabat_penilai/login')}}">
+                                    Atasan Pejabat Penilai Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/kepala_urusan_kepegawaian/login') }}">
+                                    Kepala Urusan Kepegwaian Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">

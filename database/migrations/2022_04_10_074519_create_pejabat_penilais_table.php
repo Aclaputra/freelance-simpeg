@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // protected $table = 'pejabat_penilai';
     /**
      * Run the migrations.
      *
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
     }
 
     /**
