@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('jabatan')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -44,7 +45,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('aktivitas')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -58,7 +60,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('iku')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -72,7 +75,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('realisasi_anggaran')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -86,7 +90,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('perilaku')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -100,7 +105,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('iki')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -114,7 +120,8 @@ return new class extends Migration
             // $table->unsignedInteger('user_id');
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('ikp')->nullable();
+            $table->string('penilaian')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')

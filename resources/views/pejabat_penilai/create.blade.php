@@ -10,7 +10,7 @@
                 <!-- <div class="p-6 bg-white border-b border-gray-200"> -->
                     <div class="my-4">
                         <h1 class="text-center my-2">Buat Data Sasaran Kerja Pegawai Baru</h1>
-                        <a href="{{ route('dashboard') }}" class="m-4">Back {{ Auth::user()->id }}</a>
+                        <a href="{{ route('dashboard') }}" class="m-4">Back</a>
 
                         <!-- <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm"> -->
                             <!-- start of form -->
@@ -73,6 +73,7 @@
                                         m-0
                                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Masukkan Jabatan" name="jabatan">
                                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                    
                                 </div>
                                 <button type="submit" class="
                                 px-6

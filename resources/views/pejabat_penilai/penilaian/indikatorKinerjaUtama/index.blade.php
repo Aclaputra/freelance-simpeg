@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    
     <link rel="stylesheet" href="{{ asset('../../assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('../../assets/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="{{ asset('../../assets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('../../assets/images/favicon.png') }}" />
-    
   </head>
   <body>
   <div class="container-scroller">
@@ -78,14 +76,12 @@
               </div>
             </div>
           </li>
-          
-          <!-- navigation -->
           <li class="nav-item nav-category">
-            <span class="nav-link">Navigation Dashboards</span>
+            <span class="nav-link">Navigation</span>
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('pejabat_penilai.dashboard') }}">
+            <a class="nav-link" href="../../index.html">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -93,63 +89,21 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.aktivitas.dashboard') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Aktivitas</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('pejabat_penilai.dashboard') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKU</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Realisasi</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Perilaku</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKI</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKP</span>
-            </a>
-          </li>
-
-
-          <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">IKU</span>
+              <span class="menu-title">Create New Data</span>
             </a>
-          </li> -->
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Edit Data</span>
+            </a>
+          </li>
 
         </ul>
       </nav>
@@ -374,7 +328,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Tabel Penilaian Aktivitas</h4>
                     <p class="card-description">
-                      <!-- {{ $aktivitas[0] }} -->
+                      {{ $aktivitas[0] }}
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
@@ -385,7 +339,6 @@
                             <th> NIP </th>
                             <th> Aktivitas </th>
                             <th> Penilaian </th>
-                            <th> Aksi </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -403,13 +356,8 @@
                             <td>
                               {{ $data->nip }}
                             </td>
-                            <td> {{ $data->aktivitas }} </td>
-                            <td> {{ $data->penilaian }} </td>
-                            <td>
-                              <a href="{{ url('pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/aktivitas/' . $data->id . '/edit') }}">
-                                <button type="button" class="btn btn-outline-primary">Ubah</button>
-                              </a>
-                            </td>
+                            <td> Mengerjakan Project Chatbot </td>
+                            <td> Baik </td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -435,7 +383,6 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{ asset('../../assets/vendors/js/vendor.bundle.base.js') }}"></script>

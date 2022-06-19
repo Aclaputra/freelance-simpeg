@@ -25,7 +25,7 @@ class PenilaianKinerjaAktivitasController extends Controller
      */
     public function create()
     {
-        return view('kkp.aktivitas.create');
+        // return view('pejabat_penilai.penilaian.aktivitas.create');
     }
 
     /**
@@ -39,13 +39,14 @@ class PenilaianKinerjaAktivitasController extends Controller
         $request->validate([
             'nama' => 'required',
             'nip' => 'required',
-            'jabatan' => 'required'
         ]);
         $aktivitas = new PenilaianAktivitas;
         $aktivitas->nama = $request->nama;
         $aktivitas->nip = $request->nip;
-        $aktivitas->jabatan = $request->jabatan;
+        $aktivitas->aktivitas = $request->aktivitas;
+        $aktivitas->penilaian = $request->penilaian;
         $aktivitas->save();
+
         return redirect()->route('aktivitas.index');
     }
 
@@ -57,7 +58,7 @@ class PenilaianKinerjaAktivitasController extends Controller
      */
     public function show(PenilaianAktivitas $aktivitas)
     {
-        return view('kkp.aktivitas.show', compact('aktivitas'));
+        // return view('kkp.aktivitas.show', compact('aktivitas'));
     }
 
     /**
@@ -66,9 +67,9 @@ class PenilaianKinerjaAktivitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(PenilaianAktivitas $aktivitas)
+    public function edit(PenilaianAktivitas $aktivita)
     {
-        return view('kkp.aktivitas.edit', compact('aktivitas'));
+        return view('pejabat_penilai.penilaian.aktivitas.edit', compact('aktivita'));
     }
 
     /**
@@ -83,14 +84,14 @@ class PenilaianKinerjaAktivitasController extends Controller
         $request->validate([
             'nama' => 'required',
             'nip' => 'required',
-            'jabatan' => 'required'
         ]);
         $aktivitas = PenilaianAktivitas::find($id);
         $aktivitas->nama = $request->nama;
         $aktivitas->nip = $request->nip;
-        $aktivitas->jabatan = $request->jabatan;
+        $aktivitas->aktivitas = $request->aktivitas;
+        $aktivitas->penilaian = $request->penilaian;
         $aktivitas->save();
-        return redirect()->route('kkp.aktivitas.index');
+        return redirect()->route('penilaian.aktivitas.dashboard');
     }
 
     /**
@@ -101,7 +102,7 @@ class PenilaianKinerjaAktivitasController extends Controller
      */
     public function destroy(PenilaianAktivitas $aktivitas)
     {
-        $aktivitas->delete();
-        return redirect()->route('kkp.aktivitas.index');
+        // $aktivitas->delete();
+        // return redirect()->route('kkp.aktivitas.index');
     }
 }

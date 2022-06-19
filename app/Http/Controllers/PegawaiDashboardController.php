@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\SasaranKerjaPegawai;
+use App\Models\PenilaianAktivitas;
+use App\Models\PenilaianIKU;
+use App\Models\PenilaianRealisasi;
+use App\Models\PenilaianPerilaku;
+use App\Models\PenilaianIKI;
+use App\Models\PenilaianIKP;
 use Illuminate\Support\Facades\Auth;
 
 class PegawaiDashboardController extends Controller
@@ -51,7 +57,53 @@ class PegawaiDashboardController extends Controller
         $skp->nip = $request->nip;
         $skp->jabatan = $request->jabatan;
         $skp->user_id = $request->user_id;
+
+        // buat 6 penilaian
+
+        $aktivitas = new PenilaianAktivitas;
+        $aktivitas->nama = $request->nama;
+        $aktivitas->nip = $request->nip;
+        // $aktivitas->jabatan = $request->jabatan;
+        $aktivitas->user_id = $request->user_id;
+
+        $iku = new PenilaianIKU;
+        $iku->nama = $request->nama;
+        $iku->nip = $request->nip;
+        // $iku->jabatan = $request->jabatan;
+        $iku->user_id = $request->user_id;
+        
+        $realisasi = new PenilaianRealisasi;
+        $realisasi->nama = $request->nama;
+        $realisasi->nip = $request->nip;
+        // $realisasi->jabatan = $request->jabatan;
+        $realisasi->user_id = $request->user_id;
+
+        $perilaku = new PenilaianPerilaku;
+        $perilaku->nama = $request->nama;
+        $perilaku->nip = $request->nip;
+        // $perilaku->jabatan = $request->jabatan;
+        $perilaku->user_id = $request->user_id;
+
+        $iki = new PenilaianIKI;
+        $iki->nama = $request->nama;
+        $iki->nip = $request->nip;
+        // $iki->jabatan = $request->jabatan;
+        $iki->user_id = $request->user_id;
+
+        $ikp = new PenilaianIKP;
+        $ikp->nama = $request->nama;
+        $ikp->nip = $request->nip;
+        // $ikp->jabatan = $request->jabatan;
+        $ikp->user_id = $request->user_id;
+
+        $aktivitas->save();
         $skp->save();
+        $iku->save();
+        $realisasi->save();
+        $perilaku->save();
+        $iki->save();
+        $ikp->save();
+
         return redirect()->route('dashboard');
     }
 

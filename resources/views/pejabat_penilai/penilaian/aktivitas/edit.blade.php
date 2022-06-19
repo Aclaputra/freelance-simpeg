@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    
     <link rel="stylesheet" href="{{ asset('../../assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('../../assets/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
@@ -18,14 +17,13 @@
     <link rel="stylesheet" href="{{ asset('../../assets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('../../assets/images/favicon.png') }}" />
-    
   </head>
   <body>
   <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="../../index.html"><img src=" {{ asset('../../assets/images/logo.svg') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="../../index.html"><img src="{{ asset('../../assets/images/logo.svg') }}" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="{{ asset('../../assets/images/logo-mini.svg') }}" alt="logo" /></a>
         </div>
         <ul class="nav">
@@ -37,7 +35,7 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">{{ Auth::guard('pejabat_penilai')->user()->name }}</h5>
+                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
                   <span>Gold Member</span>
                 </div>
               </div>
@@ -78,14 +76,12 @@
               </div>
             </div>
           </li>
-          
-          <!-- navigation -->
           <li class="nav-item nav-category">
-            <span class="nav-link">Navigation Dashboards</span>
+            <span class="nav-link">Navigation</span>
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('pejabat_penilai.dashboard') }}">
+            <a class="nav-link" href="../../index.html">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -93,63 +89,21 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.aktivitas.dashboard') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Aktivitas</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('pejabat_penilai.dashboard') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKU</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Realisasi</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian Perilaku</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKI</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Penilaian IKP</span>
-            </a>
-          </li>
-
-
-          <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">IKU</span>
+              <span class="menu-title">Create New Data</span>
             </a>
-          </li> -->
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Edit Data</span>
+            </a>
+          </li>
 
         </ul>
       </nav>
@@ -310,7 +264,7 @@
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="{{ asset('../../assets/images/faces/face15.jpg') }}" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::guard('pejabat_penilai')->user()->name }}</p>
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -328,23 +282,16 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-
-                  <form method="POST" action="{{ route('pejabat_penilai.logout') }}">
-                    @csrf
-                    <a class="dropdown-item preview-item" :href="route('pejabat_penilai.logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                      <div class="preview-thumbnail">
-                        <div class="preview-icon bg-dark rounded-circle">
-                          <i class="mdi mdi-logout text-danger"></i>
-                        </div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-logout text-danger"></i>
                       </div>
-                      <div class="preview-item-content">
-                        <p class="preview-subject mb-1">Log out</p>
-                      </div>
-                    </a>
-                  </form>
-
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Log out</p>
+                    </div>
+                  </a>
                   <div class="dropdown-divider"></div>
                   <p class="p-3 mb-0 text-center">Advanced settings</p>
                 </div>
@@ -368,53 +315,42 @@
               </nav>
             </div>
             <div class="row">
-              <!-- striped table -->
-              <div class="col-lg-12 grid-margin stretch-card">
+              <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Tabel Penilaian Aktivitas</h4>
-                    <p class="card-description">
-                      <!-- {{ $aktivitas[0] }} -->
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th> User </th>
-                            <th> Nama </th>
-                            <th> NIP </th>
-                            <th> Aktivitas </th>
-                            <th> Penilaian </th>
-                            <th> Aksi </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach($aktivitas as $data)
-                          <tr>
-                            <td class="py-1">
-                              <img src="{{ asset('../../assets/images/faces-clipart/pic-1.png') }}" alt="image" />
-                            </td>
-                            <td> {{ $data->nama }} </td>
-                            <!-- <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td> -->
-                            <td>
-                              {{ $data->nip }}
-                            </td>
-                            <td> {{ $data->aktivitas }} </td>
-                            <td> {{ $data->penilaian }} </td>
-                            <td>
-                              <a href="{{ url('pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/aktivitas/' . $data->id . '/edit') }}">
-                                <button type="button" class="btn btn-outline-primary">Ubah</button>
-                              </a>
-                            </td>
-                          </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Create New Aktivitas Form</h4>
+                    <p class="card-description"> Basic form layout </p>
+
+                    <!-- create form -->
+                    <form class="forms-sample" action="{{ route('penilaian.aktivitas.update', $aktivita->id) }}" method="POST" enctype="multipart/form-data">
+                        {{ $aktivita }}
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Nama</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nama"
+                                name="nama" value="{{ $aktivita->nama }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">NIP</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="NIP"
+                                name="nip" value="{{ $aktivita->nip }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Aktivitas</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="aktivitas"
+                                name="aktivitas" value="{{ $aktivita->aktivitas }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Penilaian</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="penilaian"
+                                name="penilaian" value="{{ $aktivita->penilaian }}">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-dark">Cancel</button>
+                    </form>
+
                   </div>
                 </div>
               </div>
@@ -435,7 +371,6 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{ asset('../../assets/vendors/js/vendor.bundle.base.js') }}"></script>
