@@ -14,6 +14,7 @@ class PenilaianIKU extends Model
     protected $fillable = [
         'nama',
         'nip',
-        'jabatan',
+        'iku',
+        'penilaian'
     ];
 }

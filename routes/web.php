@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiDashboardController;
 use App\Http\Controllers\PejabatPenilaiDashboardController;
 use App\Http\Controllers\PenilaianKinerjaAktivitasController;
+use App\Http\Controllers\PenilaianKinerjaIKUController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,24 @@ Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/aktivit
     ->name('edit', 'penilaian.aktivitas.edit')
     ->name('update', 'penilaian.aktivitas.update')
     ->name('destroy', 'penilaian.aktivitas.destroy');
+
+/**
+ * /dashboard/komponen_penilaian_pekerjaan/iku            (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iku/create     (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iku            (POST)
+ * /dashboard/komponen_penilaian_pekerjaan/iku/{iku}      (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iku/{iku}/edit (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iku/{iku}      (PUT/PATCH)
+ * /dashboard/komponen_penilaian_pekerjaan/iku/{iku}      (DELETE)
+ */
+Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/iku', PenilaianKinerjaIKUController::class)
+    ->name('index', 'penilaian.iku.dashboard')
+    ->name('create', 'penilaian.iku.create')
+    ->name('store', 'penilaian.iku.store')
+    ->name('show', 'penilaian.iku.show')
+    ->name('edit', 'penilaian.iku.edit')
+    ->name('update', 'penilaian.iku.update')
+    ->name('destroy', 'penilaian.iku.destroy');
 
 
 // atasan pejabat penilai routes

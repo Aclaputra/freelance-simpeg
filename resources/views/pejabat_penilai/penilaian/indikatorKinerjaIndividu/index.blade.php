@@ -328,7 +328,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Tabel Penilaian Aktivitas</h4>
                     <p class="card-description">
-                      {{ $aktivitas[0] }}
+                      {{ $iku[0] }}
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
@@ -342,7 +342,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($aktivitas as $data)
+                          @foreach($iku as $data)
                           <tr>
                             <td class="py-1">
                               <img src="{{ asset('../../assets/images/faces-clipart/pic-1.png') }}" alt="image" />
