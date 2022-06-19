@@ -9,6 +9,7 @@ use App\Http\Controllers\PenilaianKinerjaRealisasiController;
 use App\Http\Controllers\PenilaianKinerjaPerilakuController;
 use App\Http\Controllers\PenilaianKinerjaIKIController;
 use App\Http\Controllers\PenilaianKinerjaIKPController;
+use App\Http\Controllers\AtasanPejabatPenilaiDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,6 +167,16 @@ Route::get('/atasan_pejabat_penilai/dashboard', function () {
 })->middleware(['auth:atasan_pejabat_penilai'])->name('atasan_pejabat_penilai.dashboard');
 
 require __DIR__.'/atasanpejabatpenilaiauth.php';
+
+Route::resource('atasan_pejabat_penilai/dashboard', AtasanPejabatPenilaiDashboardController::class)
+    ->name('index', 'atasan_pejabat_penilai.dashboard')
+    ->name('create', 'atasan_pejabat_penilai.create')
+    ->name('store', 'atasan_pejabat_penilai.store')
+    ->name('show', 'atasan_pejabat_penilai.show')
+    ->name('edit', 'atasan_pejabat_penilai.edit')
+    ->name('update', 'atasan_pejabat_penilai.update')
+    ->name('destroy', 'atasan_pejabat_penilai.destroy');
+
 
 Route::get('/kepala_urusan_kepegawaian/dashboard', function () {
     return view('kepala_urusan_kepegawaian.dashboard');
