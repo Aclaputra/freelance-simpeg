@@ -123,16 +123,16 @@
                                     <a href="{{ route('penilaian.iku.dashboard')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IKU</a>
                                 </li> 
                                 <li>
-                                    <a href="" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Realisasi</a>
+                                    <a href="{{ route('penilaian.realisasi.dashboard')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Realisasi</a>
                                 </li> 
                                 <li>
-                                    <a href="" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Perilaku</a>
+                                    <a href="{{ route('penilaian.perilaku.dashboard')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Perilaku</a>
                                 </li> 
                                 <li>
-                                    <a href="" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IKI</a>
+                                    <a href="{{ route('penilaian.iki.dashboard')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IKI</a>
                                 </li> 
                                 <li>
-                                    <a href="" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IKP</a>
+                                    <a href="{{ route('penilaian.ikp.dashboard')}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IKP</a>
                                 </li> 
                             </ul>
                         </div>

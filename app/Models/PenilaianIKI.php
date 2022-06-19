@@ -14,6 +14,7 @@ class PenilaianIKI extends Model
     protected $fillable = [
         'nama',
         'nip',
-        'jabatan',
+        'iki',
+        'penilaian'
     ];
 }

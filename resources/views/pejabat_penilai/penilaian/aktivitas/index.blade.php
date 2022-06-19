@@ -109,7 +109,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.iku.dashboard') }}">
+            <a class="nav-link" href="{{ route('penilaian.realisasi.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -117,7 +117,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.iku.dashboard') }}">
+            <a class="nav-link" href="{{ route('penilaian.perilaku.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -125,7 +125,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.iku.dashboard') }}">
+            <a class="nav-link" href="{{ route('penilaian.iki.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -133,7 +133,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.iku.dashboard') }}">
+            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>

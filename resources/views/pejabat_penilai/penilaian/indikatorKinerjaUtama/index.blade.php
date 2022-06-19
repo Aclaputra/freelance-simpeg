@@ -105,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('penilaian.realisasi.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -113,7 +113,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('penilaian.perilaku.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -121,7 +121,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('penilaian.iki.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -129,7 +129,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -349,7 +349,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Komponen Penilaian Pekerjaan</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Indikator Kinerja Utama (SKP)</li>
+                  <li class="breadcrumb-item active" aria-current="page">Indikator Kinerja Utama (IKU)</li>
                 </ol>
               </nav>
             </div>
@@ -358,7 +358,7 @@
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Tabel Penilaian Indikator Kinerja Utama (SKP)</h4>
+                    <h4 class="card-title">Tabel Penilaian Indikator Kinerja Utama (IKU)</h4>
                     <p class="card-description">
                       <!-- {{ $iku[0] }} -->
                     </p>
@@ -369,7 +369,7 @@
                             <th> User </th>
                             <th> Nama </th>
                             <th> NIP </th>
-                            <th> Indikator Kinerja Utama (SKP) </th>
+                            <th> Indikator Kinerja Utama (IKU) </th>
                             <th> Penilaian </th>
                             <th> Aksi </th>
                           </tr>

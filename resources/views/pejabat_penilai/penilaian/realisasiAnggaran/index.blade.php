@@ -81,7 +81,7 @@
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="{{ route('pejabat_penilai.dashboard') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -89,19 +89,51 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+            <a class="nav-link" href="{{ route('penilaian.aktivitas.dashboard') }}">
               <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
+                <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Create New Data</span>
+              <span class="menu-title">Penilaian Aktivitas</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+            <a class="nav-link" href="{{ route('penilaian.iku.dashboard') }}">
               <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
+                <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Edit Data</span>
+              <span class="menu-title">Penilaian IKU</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('penilaian.realisasi.dashboard') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Penilaian Realisasi</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('penilaian.perilaku.dashboard') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Penilaian Perilaku</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('penilaian.iki.dashboard') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Penilaian IKI</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Penilaian IKP</span>
             </a>
           </li>
 
@@ -313,11 +345,11 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Aktivitas </h3>
+              <h3 class="page-title"> Indikator Kinerja Utama </h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Komponen Penilaian Pekerjaan</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Aktivitas</li>
+                  <li class="breadcrumb-item active" aria-current="page">Indikator Kinerja Utama (SKP)</li>
                 </ol>
               </nav>
             </div>
@@ -326,9 +358,9 @@
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Tabel Penilaian Aktivitas</h4>
+                    <h4 class="card-title">Tabel Penilaian Indikator Kinerja Utama (SKP)</h4>
                     <p class="card-description">
-                      {{ $aktivitas[0] }}
+                      <!-- {{ $realisasi[0] }} -->
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
@@ -337,12 +369,13 @@
                             <th> User </th>
                             <th> Nama </th>
                             <th> NIP </th>
-                            <th> Aktivitas </th>
+                            <th> Realisasi Anggaran </th>
                             <th> Penilaian </th>
+                            <th> Aksi </th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($aktivitas as $data)
+                          @foreach($realisasi as $data)
                           <tr>
                             <td class="py-1">
                               <img src="{{ asset('../../assets/images/faces-clipart/pic-1.png') }}" alt="image" />
@@ -356,8 +389,13 @@
                             <td>
                               {{ $data->nip }}
                             </td>
-                            <td> Mengerjakan Project Chatbot </td>
-                            <td> Baik </td>
+                            <td> {{ $data->realisasi_anggaran }} </td>
+                            <td> {{ $data->penilaian }}</td>
+                            <td>
+                              <a href="{{ url('pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/realisasi/' . $data->id . '/edit') }}">
+                                <button type="button" class="btn btn-outline-primary">Ubah</button>
+                              </a>
+                            </td>
                           </tr>
                           @endforeach
                         </tbody>

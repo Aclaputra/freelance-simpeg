@@ -306,11 +306,11 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Aktivitas </h3>
+              <h3 class="page-title"> Indikator Kinerja Utama (SKP) </h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Komponen Penilaian Pekerjaan</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Aktivitas</li>
+                  <li class="breadcrumb-item active" aria-current="page">Indikator Kinerja Utama (SKP)</li>
                 </ol>
               </nav>
             </div>
@@ -318,27 +318,34 @@
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Create New Aktivitas Form</h4>
+                    <h4 class="card-title">Penilaian IKU Form</h4>
                     <p class="card-description"> Basic form layout </p>
 
                     <!-- create form -->
-                    <form class="forms-sample" action="{{ route('penilaian.aktivitas.store') }}" method="POST" enctype="multipart/form-data">
+                    <form class="forms-sample" action="{{ route('penilaian.realisasi.update', $realisasi->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="exampleInputUsername1">Nama</label>
                             <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nama"
-                                name="nama">
+                                name="nama" value="{{ $realisasi->nama }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputUsername1">NIP</label>
                             <input type="text" class="form-control" id="exampleInputUsername1" placeholder="NIP"
-                                name="nip">
+                                name="nip" value="{{ $realisasi->nip }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputUsername1">Jabatan</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Jabatan"
-                                name="jabatan">
+                            <label for="exampleInputUsername1">Realisasi Anggaran</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="realisasi anggaran"
+                                name="realisasi_anggaran" value="{{ $realisasi->realisasi_anggaran }}">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Penilaian</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="penilaian"
+                                name="penilaian" value="{{ $realisasi->penilaian }}">
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <button class="btn btn-dark">Cancel</button>
                     </form>

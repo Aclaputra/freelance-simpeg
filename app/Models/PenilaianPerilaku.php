@@ -14,6 +14,7 @@ class PenilaianPerilaku extends Model
     protected $fillable = [
         'nama',
         'nip',
-        'jabatan',
+        'perilaku',
+        'penilaian'
     ];
 }

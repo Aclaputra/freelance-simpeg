@@ -306,7 +306,7 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Indikator Kinerja Utama (SKP) </h3>
+              <h3 class="page-title"> Indikator Kinerja Utama (IKU) </h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Komponen Penilaian Pekerjaan</a></li>
@@ -323,7 +323,6 @@
 
                     <!-- create form -->
                     <form class="forms-sample" action="{{ route('penilaian.iku.update', $iku->id) }}" method="POST" enctype="multipart/form-data">
-                        {{ $iku }}
                         @csrf
                         @method('PUT')
                         <div class="form-group">

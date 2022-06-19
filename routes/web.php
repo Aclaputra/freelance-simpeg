@@ -5,6 +5,10 @@ use App\Http\Controllers\PegawaiDashboardController;
 use App\Http\Controllers\PejabatPenilaiDashboardController;
 use App\Http\Controllers\PenilaianKinerjaAktivitasController;
 use App\Http\Controllers\PenilaianKinerjaIKUController;
+use App\Http\Controllers\PenilaianKinerjaRealisasiController;
+use App\Http\Controllers\PenilaianKinerjaPerilakuController;
+use App\Http\Controllers\PenilaianKinerjaIKIController;
+use App\Http\Controllers\PenilaianKinerjaIKPController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +86,78 @@ Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/iku', P
     ->name('edit', 'penilaian.iku.edit')
     ->name('update', 'penilaian.iku.update')
     ->name('destroy', 'penilaian.iku.destroy');
+
+/**
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi            (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi/create     (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi            (POST)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi/{realisasi}      (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi/{realisasi}/edit (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi/{realisasi}      (PUT/PATCH)
+ * /dashboard/komponen_penilaian_pekerjaan/realisasi/{realisasi}      (DELETE)
+ */
+Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/realisasi', PenilaianKinerjaRealisasiController::class)
+->name('index', 'penilaian.realisasi.dashboard')
+->name('create', 'penilaian.realisasi.create')
+->name('store', 'penilaian.realisasi.store')
+->name('show', 'penilaian.realisasi.show')
+->name('edit', 'penilaian.realisasi.edit')
+->name('update', 'penilaian.realisasi.update')
+->name('destroy', 'penilaian.realisasi.destroy');
+
+/**
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku            (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku/create     (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku            (POST)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku/{perilaku}      (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku/{perilaku}/edit (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku/{perilaku}      (PUT/PATCH)
+ * /dashboard/komponen_penilaian_pekerjaan/perilaku/{perilaku}      (DELETE)
+ */
+Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/perilaku', PenilaianKinerjaPerilakuController::class)
+    ->name('index', 'penilaian.perilaku.dashboard')
+    ->name('create', 'penilaian.perilaku.create')
+    ->name('store', 'penilaian.perilaku.store')
+    ->name('show', 'penilaian.perilaku.show')
+    ->name('edit', 'penilaian.perilaku.edit')
+    ->name('update', 'penilaian.perilaku.update')
+    ->name('destroy', 'penilaian.perilaku.destroy');
+
+/**
+ * /dashboard/komponen_penilaian_pekerjaan/iki            (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iki/create     (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iki            (POST)
+ * /dashboard/komponen_penilaian_pekerjaan/iki/{iki}      (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iki/{iki}/edit (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/iki/{iki}      (PUT/PATCH)
+ * /dashboard/komponen_penilaian_pekerjaan/iki/{iki}      (DELETE)
+ */
+Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/iki', PenilaianKinerjaIKIController::class)
+    ->name('index', 'penilaian.iki.dashboard')
+    ->name('create', 'penilaian.iki.create')
+    ->name('store', 'penilaian.iki.store')
+    ->name('show', 'penilaian.iki.show')
+    ->name('edit', 'penilaian.iki.edit')
+    ->name('update', 'penilaian.iki.update')
+    ->name('destroy', 'penilaian.iki.destroy');
+
+/**
+ * /dashboard/komponen_penilaian_pekerjaan/ikp            (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp/create     (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp            (POST)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp/{ikp}      (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp/{ikp}/edit (GET)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp/{ikp}      (PUT/PATCH)
+ * /dashboard/komponen_penilaian_pekerjaan/ikp/{ikp}      (DELETE)
+ */
+Route::resource('/pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/ikp', PenilaianKinerjaIKPController::class)
+    ->name('index', 'penilaian.ikp.dashboard')
+    ->name('create', 'penilaian.ikp.create')
+    ->name('store', 'penilaian.ikp.store')
+    ->name('show', 'penilaian.ikp.show')
+    ->name('edit', 'penilaian.ikp.edit')
+    ->name('update', 'penilaian.ikp.update')
+    ->name('destroy', 'penilaian.ikp.destroy');
 
 
 // atasan pejabat penilai routes

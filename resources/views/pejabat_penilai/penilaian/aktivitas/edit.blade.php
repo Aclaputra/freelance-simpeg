@@ -323,7 +323,6 @@
 
                     <!-- create form -->
                     <form class="forms-sample" action="{{ route('penilaian.aktivitas.update', $aktivita->id) }}" method="POST" enctype="multipart/form-data">
-                        {{ $aktivita }}
                         @csrf
                         @method('PUT')
                         <div class="form-group">
