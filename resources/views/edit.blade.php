@@ -1,99 +1,421 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} SKP
-        </h2>
-    </x-slot>
-
-   <div class="m-12">
-
-       <form action="{{ route('dashboard.update', $dashboard->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <div class="form-group mb-6">
-                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">Nama</label>
-                <input type="text" class="form-control
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Masukkan Nama" 
-                    name="nama"
-                    value="{{ $dashboard->nama }}"
-                    >
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corona Admin</title>
+    <!-- plugins:css -->
     
-            <div class="form-group mb-6">
-                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">NIP</label>
-                <input type="text" class="form-control
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Masukkan NIP" 
-                    name="nip"
-                    value="{{ $dashboard->nip }}"
-                    >
-            </div>
+    <link rel="stylesheet" href="{{ asset('../../assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../assets/vendors/css/vendor.bundle.base.css') }}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End Plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{{ asset('../../assets/css/style.css') }}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{ asset('../../assets/images/favicon.png') }}" />
     
-            <div class="form-group mb-6">
-                <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-gray-700">Jabatan</label>
-                <input type="text" class="form-control
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Masukkan Jabatan" 
-                    name="jabatan"
-                    value="{{ $dashboard->jabatan }}"
-                    >
-                <input type="hidden" name="user_id" value="{{ $dashboard->user_id }}">
+  </head>
+  <body>
+  <div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo" href="../../index.html"><img src=" {{ asset('../../assets/images/logo.svg') }}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="{{ asset('../../assets/images/logo-mini.svg') }}" alt="logo" /></a>
+        </div>
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="{{ asset('../../assets/images/faces/face15.jpg') }}" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal"></h5>
+                  <span>Gold Member</span>
+                </div>
+              </div>
+              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+                <a href="#" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-settings text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-onepassword  text-info"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-calendar-today text-success"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                  </div>
+                </a>
+              </div>
             </div>
-            <button type="submit" class="
-            px-6
-            py-2.5
-            bg-blue-600
-            text-white
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            rounded
-            shadow-md
-            hover:bg-blue-700 hover:shadow-lg
-            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-            active:bg-blue-800 active:shadow-lg
-            transition
-            duration-150
-            ease-in-out">Submit</button>
-        </form>
-   </div>
+          </li>
+          
+          <!-- navigation -->
+          <li class="nav-item nav-category">
+            <span class="nav-link">Navigation Dashboards</span>
+          </li>
 
-</x-app-layout>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('dashboard') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url('dashboard/'. Auth::user()->id . '/edit') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Edit Data</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="{{ asset('../../assets/images/logo-mini.svg') }}" alt="logo" /></a>
+          </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav w-100">
+              <li class="nav-item w-100">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+                  <input type="text" class="form-control" placeholder="Search products">
+                </form>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item dropdown d-none d-lg-block">
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
+                  <h6 class="p-3 mb-0">Projects</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-file-outline text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Software Development</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-web text-info"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">UI Development</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-layers text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <p class="p-3 mb-0 text-center">See all projects</p>
+                </div>
+              </li>
+              <li class="nav-item nav-settings d-none d-lg-block">
+                <a class="nav-link" href="#">
+                  <i class="mdi mdi-view-grid"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                  <i class="mdi mdi-email"></i>
+                  <span class="count bg-success"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                  <h6 class="p-3 mb-0">Messages</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <img src="{{ asset('../../assets/images/faces/face4.jpg') }}" alt="image" class="rounded-circle profile-pic">
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
+                      <p class="text-muted mb-0"> 1 Minutes ago </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <img src="{{ asset('../../assets/images/faces/face2.jpg') }}" alt="image" class="rounded-circle profile-pic">
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
+                      <p class="text-muted mb-0"> 15 Minutes ago </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <img src="{{ asset('../../assets/images/faces/face3.jpg') }}" alt="image" class="rounded-circle profile-pic">
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
+                      <p class="text-muted mb-0"> 18 Minutes ago </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <p class="p-3 mb-0 text-center">4 new messages</p>
+                </div>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-bell"></i>
+                  <span class="count bg-danger"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <h6 class="p-3 mb-0">Notifications</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Event today</p>
+                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-settings text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Settings</p>
+                      <p class="text-muted ellipsis mb-0"> Update dashboard </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-link-variant text-warning"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Launch Admin</p>
+                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <p class="p-3 mb-0 text-center">See all notifications</p>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                  <div class="navbar-profile">
+                    <img class="img-xs rounded-circle" src="{{ asset('../../assets/images/faces/face15.jpg') }}" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name"></p>
+                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+                  <h6 class="p-3 mb-0">Profile</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-settings text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Settings</p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+
+                  <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a class="dropdown-item preview-item" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon bg-dark rounded-circle">
+                          <i class="mdi mdi-logout text-danger"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content">
+                        <p class="preview-subject mb-1">Log out</p>
+                      </div>
+                    </a>
+                  </form>
+
+                  <div class="dropdown-divider"></div>
+                  <p class="p-3 mb-0 text-center">Advanced settings</p>
+                </div>
+              </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Dashboard Pegawai </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Komponen Penilaian Pekerjaan</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Dashboard Pegawai</li>
+                </ol>
+              </nav>
+
+              <!-- form edit -->
+              
+            </div>
+            <div class="row">
+                
+                <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Edit Data</h4>
+                        <p class="card-description"> Basic form layout </p>
+
+                        <form class="forms-sample" action="{{ route('dashboard.update', $dashboard->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Nama</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="nama" value="{{ $dashboard->nama }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Nama</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="nip" value="{{ $dashboard->nip }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Jabatan</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="jabatan" value="{{ $dashboard->jabatan }}">
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button class="btn btn-dark">Cancel</button>
+                        </form>
+
+                      </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Detail Data</h4>
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Data</th>
+                                <th>Current Value</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>{{ $dashboard->nama }}</td>
+                              </tr>
+                              <tr>
+                                <td>NIP</td>
+                                <td>{{ $dashboard->nip }}</td>
+                              </tr>
+                              <tr>
+                                <td>Jabatan</td>
+                                <td>{{ $dashboard->jabatan }}</td>
+                              </tr>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
+              <span class="text-muted float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{{ asset('../../assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('../../assets/vendors/chart.js/Chart.min.js') }}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{{ asset('../../assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('../../assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('../../assets/js/misc.js') }}"></script>
+    <script src="{{ asset('../../assets/js/settings.js') }}"></script>
+    <script src="{{ asset('../../assets/js/todolist.js') }}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{{ asset('../../assets/js/chart.js') }}"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
