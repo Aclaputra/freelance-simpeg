@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // protected $table = 'pejabat_penilai';
     /**
      * Run the migrations.
      *
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pejabat_penilais', function (Blueprint $table) {
+        Schema::create('pejabat_penilai', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pejabat_penilais');
+        Schema::dropIfExists('pejabat_penilai');
     }
 };

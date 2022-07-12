@@ -13,11 +13,14 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <!-- tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="">
             {{ $slot }}
         </div>
     </body>

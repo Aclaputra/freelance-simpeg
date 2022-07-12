@@ -40,17 +40,17 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'pejabat_penilais' => [
+        'pejabat_penilai' => [
             'driver' => 'session',
-            'provider' => 'pejabat_penilais',
+            'provider' => 'pejabat_penilai',
         ],
-        'atasan_pejabat_penilais' => [
+        'atasan_pejabat_penilai' => [
             'driver' => 'session',
-            'provider' => 'atasan_pejabat_penilais',
+            'provider' => 'atasan_pejabat_penilai',
         ],
-        'kepala_urusan_kepegawaians' => [
+        'kepala_urusan_kepegawaian' => [
             'driver' => 'session',
-            'provider' => 'kepala_urusan_kepegawaians',
+            'provider' => 'kepala_urusan_kepegawaian',
         ],
     ],
 
@@ -76,15 +76,15 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'pejabat_penilais' => [
+        'pejabat_penilai' => [
             'driver' => 'eloquent',
             'model' => App\Models\PejabatPenilai::class,
         ],
-        'atasan_pejabat_penilais' => [
+        'atasan_pejabat_penilai' => [
             'driver' => 'eloquent',
             'model' => App\Models\AtasanPejabatPenilai::class,
         ],
-        'kepala_urusan_kepegawaians' => [
+        'kepala_urusan_kepegawaian' => [
             'driver' => 'eloquent',
             'model' => App\Models\KepalaUrusanKepegawaian::class,
         ],

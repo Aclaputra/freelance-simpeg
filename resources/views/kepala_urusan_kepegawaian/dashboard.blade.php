@@ -1,7 +1,7 @@
 <x-kepala_urusan_kepegawaian-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} {{ Auth::guard('kepala_urusan_kepegawaians')->user()->name }} - ({{ Auth::guard('kepala_urusan_kepegawaians')->user()->email }})
+            {{ __('Dashboard') }} {{ Auth::guard('kepala_urusan_kepegawaian')->user()->name }} - ({{ Auth::guard('kepala_urusan_kepegawaian')->user()->email }})
         </h2>
     </x-slot>
 

@@ -21,6 +21,7 @@ class RouteServiceProvider extends ServiceProvider
     public const PEJABAT_PENILAI_HOME = '/pejabat_penilai/dashboard';
     public const ATASAN_PEJABAT_PENILAI_HOME = '/atasan_pejabat_penilai/dashboard';
     public const KEPALA_URUSAN_KEPEGAWAIAN_HOME = '/kepala_urusan_kepegawaian/dashboard';
+    public const CREATE_SKP = '/dashboard/create';
 
     /**
      * Define your route model bindings, pattern filters, etc.

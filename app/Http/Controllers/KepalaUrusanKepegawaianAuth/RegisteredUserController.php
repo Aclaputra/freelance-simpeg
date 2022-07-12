@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:kepala_urusan_kepegawaians'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:kepala_urusan_kepegawaian'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::guard('kepala_urusan_kepegawaians')->login($user);
+        Auth::guard('kepala_urusan_kepegawaian')->login($user);
 
         return redirect(RouteServiceProvider::KEPALA_URUSAN_KEPEGAWAIAN_HOME);
     }

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // protected $table = 'atasan_pejabat_penilai';
     /**
      * Run the migrations.
      *
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('atasan_pejabat_penilais', function (Blueprint $table) {
+        Schema::create('atasan_pejabat_penilai', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atasan_pejabat_penilais');
+        Schema::dropIfExists('atasan_pejabat_penilai');
     }
 };

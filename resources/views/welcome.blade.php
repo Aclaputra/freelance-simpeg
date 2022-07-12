@@ -40,13 +40,13 @@
             
             @if (Route::has('login'))
                 <div class="">
-                    @auth('pejabat_penilais')
+                    @auth('pejabat_penilai')
                         <a href="{{ url('/pejabat_penilai/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Pejabat Penilai Dashboard</a>
                     @else
-                        <a href="{{ route('pejabat_penilais.login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Pejabat Penilai Log in</a>
+                        <a href="{{ route('pejabat_penilai.login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Pejabat Penilai Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('pejabat_penilais.register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Pejabat Penilai Register</a>
+                            <a href="{{ route('pejabat_penilai.register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Pejabat Penilai Register</a>
                         @endif
                     @endauth
                 </div>

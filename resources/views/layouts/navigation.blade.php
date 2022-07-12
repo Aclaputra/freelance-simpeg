@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="url('dashboard/'. Auth::user()->id . '/edit')" :active="request()->routeIs('dashboard.edit')">
+                        {{ __('Edit Sasaran Kerja Pegawai') }}
+                    </x-nav-link>
                 </div>
             </div>
 

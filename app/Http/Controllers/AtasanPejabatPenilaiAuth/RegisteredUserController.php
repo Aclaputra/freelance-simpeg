@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:atasan_pejabat_penilais'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:atasan_pejabat_penilai'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::guard('atasan_pejabat_penilais')->login($user);
+        Auth::guard('atasan_pejabat_penilai')->login($user);
 
         return redirect(RouteServiceProvider::ATASAN_PEJABAT_PENILAI_HOME);
     }

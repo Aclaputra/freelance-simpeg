@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class PejabatPenilai extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $guard = 'pejabat_penilais';
+    protected $table = 'pejabat_penilai';
     
     /**
      * The attributes that are mass assignable.

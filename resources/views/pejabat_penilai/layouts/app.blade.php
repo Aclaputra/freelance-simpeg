@@ -12,9 +12,13 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
 
+        
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -32,5 +36,7 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+
     </body>
 </html>
