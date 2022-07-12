@@ -336,7 +336,7 @@
                                 <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="nama" value="{{ $dashboard->nama }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Nama</label>
+                                <label for="exampleInputUsername1">NIP</label>
                                 <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="nip" value="{{ $dashboard->nip }}">
                             </div>
                             <div class="form-group">
@@ -382,7 +382,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
           <!-- content-wrapper ends -->
