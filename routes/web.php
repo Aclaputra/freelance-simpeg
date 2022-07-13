@@ -184,6 +184,3 @@ Route::get('/kepala_urusan_kepegawaian/dashboard', function () {
 
 require __DIR__.'/kepalaurusankepegawaianauth.php';
 
-Route::get('/coba', function () {
-    return view('coba');
-});
