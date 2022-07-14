@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\SasaranKerjaPegawai;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AtasanPejabatPenilaiDashboardController extends Controller
 {
@@ -16,8 +17,25 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function index(SasaranKerjaPegawai $dashboard)
     {
-        $data['pegawai'] = User::join('skp', 'users.id', '=', 'skp.user_id')
+        // $data['pegawai'] = User::join('skp', 'users.id', '=', 'skp.user_id')
+        //     ->join('penilaian_aktivitas', 'skp', 'users.id', '=', 'penilaian_aktivitas.user_id')
+        //     ->get();
+        $data['pegawai'] = DB::table('users')
+            ->join('skp', 'users.id', '=', 'skp.user_id')
+            ->join('penilaian_aktivitas', 'users.id', '=', 'penilaian_aktivitas.user_id')
+            ->join('penilaian_iki', 'users.id', '=', 'penilaian_iki.user_id')
+            ->join('penilaian_ikp', 'users.id', '=', 'penilaian_ikp.user_id')
+            ->join('penilaian_iku', 'users.id', '=', 'penilaian_iku.user_id')
+            ->join('penilaian_perilaku', 'users.id', '=', 'penilaian_perilaku.user_id')
+            ->join('penilaian_realisasi', 'users.id', '=', 'penilaian_realisasi.user_id')
             ->get();
+
+        // $data['aktivitas'] = DB::table('penilaian_aktivitas')->get();
+        // $data['iki'] = DB::table('penilaian_iki')->get();
+        // $data['ikp'] = DB::table('penilaian_ikp')->get();
+        // $data['iku'] = DB::table('penilaian_iku')->get();
+        // $data['perilaku'] = DB::table('penilaian_perilaku')->get();
+        // $data['realisasi'] = DB::table('penilaian_realisasi')->get();
 
         return view('atasan_pejabat_penilai.dashboard', $data);
     } 
