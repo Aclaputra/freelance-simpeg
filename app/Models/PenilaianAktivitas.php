@@ -15,6 +15,6 @@ class PenilaianAktivitas extends Model
         'nama',
         'nip',
         'aktivitas',
-        'penilaian'
+        'penilaian_aktivitas'
     ];
 }
