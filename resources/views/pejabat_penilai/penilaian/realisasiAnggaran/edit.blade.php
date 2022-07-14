@@ -343,7 +343,7 @@
                         <div class="form-group">
                             <label for="exampleInputUsername1">Penilaian</label>
                             <input type="text" class="form-control" id="exampleInputUsername1" placeholder="penilaian"
-                                name="penilaian" value="{{ $realisasi->penilaian }}">
+                                name="penilaian_realisasi" value="{{ $realisasi->penilaian_realisasi }}">
                         </div>
                         
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
