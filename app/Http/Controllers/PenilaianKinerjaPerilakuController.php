@@ -89,7 +89,7 @@ class PenilaianKinerjaPerilakuController extends Controller
         $perilaku->nama = $request->nama;
         $perilaku->nip = $request->nip;
         $perilaku->perilaku = $request->perilaku;
-        $perilaku->penilaian = $request->penilaian;
+        $perilaku->penilaian_perilaku = $request->penilaian_perilaku;
         $perilaku->save();
         return redirect()->route('penilaian.perilaku.dashboard');
     }
