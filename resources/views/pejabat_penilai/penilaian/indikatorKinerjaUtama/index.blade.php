@@ -390,7 +390,7 @@
                               {{ $data->nip }}
                             </td>
                             <td> {{ $data->iku }} </td>
-                            <td> {{ $data->penilaian }}</td>
+                            <td> {{ $data->penilaian_iku }}</td>
                             <td>
                               <a href="{{ url('pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/iku/' . $data->id . '/edit') }}">
                                 <button type="button" class="btn btn-outline-primary">Ubah</button>
