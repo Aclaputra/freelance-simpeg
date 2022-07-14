@@ -89,7 +89,7 @@ class PenilaianKinerjaRealisasiController extends Controller
         $realisasi->nama = $request->nama;
         $realisasi->nip = $request->nip;
         $realisasi->realisasi_anggaran = $request->realisasi_anggaran;
-        $realisasi->penilaian = $request->penilaian;
+        $realisasi->penilaian_realisasi = $request->penilaian_realisasi;
         $realisasi->save();
         return redirect()->route('penilaian.realisasi.dashboard');
     }
