@@ -15,6 +15,6 @@ class PenilaianIKP extends Model
         'nama',
         'nip',
         'ikp',
-        'penilaian'
+        'penilaian_ikp'
     ];
 }
