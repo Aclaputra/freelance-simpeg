@@ -89,7 +89,7 @@ class PenilaianKinerjaIKPController extends Controller
         $ikp->nama = $request->nama;
         $ikp->nip = $request->nip;
         $ikp->ikp = $request->ikp;
-        $ikp->penilaian = $request->penilaian;
+        $ikp->penilaian_ikp = $request->penilaian_ikp;
         $ikp->save();
         return redirect()->route('penilaian.ikp.dashboard');
     }
