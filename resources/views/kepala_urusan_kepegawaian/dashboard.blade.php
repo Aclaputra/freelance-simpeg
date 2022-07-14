@@ -428,7 +428,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Tabel Info Pegawai</h4>
                     <p class="card-description">
-
+                    <a class="btn btn-warning float-end" href="{{ route('skp.export') }}">Export User Data</a>
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
