@@ -46,7 +46,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('aktivitas')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_aktivitas')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -61,7 +61,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('iku')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_iku')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -76,7 +76,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('realisasi_anggaran')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_realisasi')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -91,7 +91,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('perilaku')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_perilaku')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -106,7 +106,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('iki')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_iki')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -121,7 +121,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nip')->nullable();
             $table->string('ikp')->nullable();
-            $table->string('penilaian')->nullable();
+            $table->string('penilaian_ikp')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')
                 ->constrained('users')
