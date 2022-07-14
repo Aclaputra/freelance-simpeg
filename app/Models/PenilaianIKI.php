@@ -15,6 +15,6 @@ class PenilaianIKI extends Model
         'nama',
         'nip',
         'iki',
-        'penilaian'
+        'penilaian_iki'
     ];
 }
