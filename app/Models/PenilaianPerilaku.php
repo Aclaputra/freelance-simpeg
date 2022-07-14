@@ -15,6 +15,6 @@ class PenilaianPerilaku extends Model
         'nama',
         'nip',
         'perilaku',
-        'penilaian'
+        'penilaian_perilaku'
     ];
 }
