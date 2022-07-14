@@ -15,6 +15,6 @@ class PenilaianIKU extends Model
         'nama',
         'nip',
         'iku',
-        'penilaian'
+        'penilaian_iku'
     ];
 }

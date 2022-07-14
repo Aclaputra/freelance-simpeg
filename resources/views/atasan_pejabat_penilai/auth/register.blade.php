@@ -30,7 +30,7 @@
         </div>
         <ul class="nav">
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
+            <a class="nav-link" href="{{ route('atasan_pejabat_penilai.login') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
+            <a class="nav-link" href="{{ route('atasan_pejabat_penilai.register') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -281,7 +281,7 @@
                         <p class="card-description"> Register sebagai Atasan Pejabat Penilai </p>
 
                         <!-- form Register -->
-                        <form class="forms-sample" method="POST" action="{{ url('pejabat_penilai/register') }}">
+                        <form class="forms-sample" method="POST" action="{{ url('atasan_pejabat_penilai/register') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleText">Nama</label>

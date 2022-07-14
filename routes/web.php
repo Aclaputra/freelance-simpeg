@@ -10,6 +10,7 @@ use App\Http\Controllers\PenilaianKinerjaPerilakuController;
 use App\Http\Controllers\PenilaianKinerjaIKIController;
 use App\Http\Controllers\PenilaianKinerjaIKPController;
 use App\Http\Controllers\AtasanPejabatPenilaiDashboardController;
+use App\Http\Controllers\KepalaUrusanKepegawaianDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -184,3 +185,11 @@ Route::get('/kepala_urusan_kepegawaian/dashboard', function () {
 
 require __DIR__.'/kepalaurusankepegawaianauth.php';
 
+Route::resource('kepala_urusan_kepegawaian/dashboard', KepalaUrusanKepegawaianDashboardController::class)
+    ->name('index', 'kepala_urusan_kepegawaian.dashboard')
+    ->name('create', 'kepala_urusan_kepegawaian.create')
+    ->name('store', 'kepala_urusan_kepegawaian.store')
+    ->name('show', 'kepala_urusan_kepegawaian.show')
+    ->name('edit', 'kepala_urusan_kepegawaian.edit')
+    ->name('update', 'kepala_urusan_kepegawaian.update')
+    ->name('destroy', 'kepala_urusan_kepegawaian.destroy');

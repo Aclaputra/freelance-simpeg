@@ -89,7 +89,7 @@ class PenilaianKinerjaIKIController extends Controller
         $iki->nama = $request->nama;
         $iki->nip = $request->nip;
         $iki->iki = $request->iki;
-        $iki->penilaian = $request->penilaian;
+        $iki->penilaian_iki = $request->penilaian_iki;
         $iki->save();
         return redirect()->route('penilaian.iki.dashboard');
     }

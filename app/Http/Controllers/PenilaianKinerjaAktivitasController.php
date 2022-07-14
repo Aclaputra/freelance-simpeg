@@ -44,7 +44,7 @@ class PenilaianKinerjaAktivitasController extends Controller
         $aktivitas->nama = $request->nama;
         $aktivitas->nip = $request->nip;
         $aktivitas->aktivitas = $request->aktivitas;
-        $aktivitas->penilaian = $request->penilaian;
+        $aktivitas->penilaian_aktivitas = $request->penilaian_aktivitas;
         $aktivitas->save();
 
         return redirect()->route('aktivitas.index');
@@ -89,7 +89,7 @@ class PenilaianKinerjaAktivitasController extends Controller
         $aktivitas->nama = $request->nama;
         $aktivitas->nip = $request->nip;
         $aktivitas->aktivitas = $request->aktivitas;
-        $aktivitas->penilaian = $request->penilaian;
+        $aktivitas->penilaian_aktivitas = $request->penilaian_aktivitas;
         $aktivitas->save();
         return redirect()->route('penilaian.aktivitas.dashboard');
     }

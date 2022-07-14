@@ -15,6 +15,6 @@ class PenilaianRealisasi extends Model
         'nama',
         'nip',
         'realisasi',
-        'penilaian'
+        'penilaian_realisasi'
     ];
 }

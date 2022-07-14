@@ -432,18 +432,48 @@
                     </p>
                     <div class="table-responsive">
                       <table class="table table-striped">
-                        <thead>
+                      <thead>
                           <tr>
+                            <th> No </th>
                             <th> Nama </th>
                             <th> NIP </th>
-                            <th> Email </th>
                             <th> Jabatan </th>
+                            <th> Aktivitas </th>
+                            <th> Penilaian Aktivitas </th>
+                            <th> Perilaku </th>
+                            <th> Penilaian Perilaku </th>
+                            <th> Realisasi </th>
+                            <th> Penilaian Realisasi </th>
+                            <th> IKI </th>
+                            <th> Penilaian IKI </th>
+                            <th> IKP </th>
+                            <th> Penilaian IKP</th>
+                            <th> IKU </th>
+                            <th> Penilaian IKU</th>
                           </tr>
                         </thead>
                         <tbody>
+                          
+                          @foreach($pegawai as $data )
                             <tr>
-                              
+                              <th>{{ $loop->iteration }}</th>
+                              <th>{{ $data->nama }}</th>
+                              <th>{{ $data->nip }}</th>
+                              <th>{{ $data->jabatan }}</th>
+                              <th>{{ $data->aktivitas }}</th>
+                              <th>{{ $data->penilaian_aktivitas }}</th>
+                              <th>{{ $data->perilaku }}</th>
+                              <th>{{ $data->penilaian_perilaku }}</th>
+                              <th>{{ $data->realisasi_anggaran }}</th>
+                              <th>{{ $data->penilaian_realisasi }}</th>
+                              <th>{{ $data->iki }}</th>
+                              <th>{{ $data->penilaian_iki}}</th>
+                              <th>{{ $data->ikp }}</th>
+                              <th>{{ $data->penilaian_ikp }}</th>
+                              <th>{{ $data->iku }}</th>
+                              <th>{{ $data->penilaian_iku }}</th>
                             </tr>
+                          @endforeach
                         </tbody>
                       </table>
                     </div>

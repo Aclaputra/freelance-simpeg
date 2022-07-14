@@ -30,7 +30,7 @@
         </div>
         <ul class="nav">
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
+            <a class="nav-link" href="{{ route('pejabat_penilai.login') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('penilaian.ikp.dashboard') }}">
+            <a class="nav-link" href="{{ route('pejabat_penilai.register') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>

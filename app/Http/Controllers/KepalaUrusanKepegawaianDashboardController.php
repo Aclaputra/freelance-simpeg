@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SasaranKerjaPegawai;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Exports\SkpExport;
+use Maatwebsite\Excel\Facades\Excel;
 
-class AtasanPejabatPenilaiDashboardController extends Controller
+class KepalaUrusanKepegawaianDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(SasaranKerjaPegawai $dashboard)
+    public function index()
     {
         // $data['pegawai'] = User::join('skp', 'users.id', '=', 'skp.user_id')
         //     ->join('penilaian_aktivitas', 'skp', 'users.id', '=', 'penilaian_aktivitas.user_id')
@@ -37,8 +36,12 @@ class AtasanPejabatPenilaiDashboardController extends Controller
         // $data['perilaku'] = DB::table('penilaian_perilaku')->get();
         // $data['realisasi'] = DB::table('penilaian_realisasi')->get();
 
-        return view('atasan_pejabat_penilai.dashboard', $data);
-    } 
+        return view('kepala_urusan_kepegawaian.dashboard', $data);
+    }
+
+    public function export() {
+        return Excel::download(new SkpExport, 'skp.xlsx');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -47,7 +50,7 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -58,18 +61,7 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'nip' => 'required',
-            'jabatan' => 'required'
-        ]);
-        $skp = new SasaranKerjaPegawai;
-        $skp->nama = $request->nama;
-        $skp->nip = $request->nip;
-        $skp->jabatan = $request->jabatan;
-        $skp->user_id = $request->user_id;
-        $skp->save();
-        return redirect()->route('dashboard');
+        //
     }
 
     /**
@@ -80,12 +72,7 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function show($id)
     {
-        $data['skp'] = User::join('skp', 'users.id', '=', 'skp.user_id')
-        ->where('users.id', Auth::user()->id)
-        ->get();
-
-        return view('skp.show', $data);
-        // return view('skp.show', compact('skp'));
+        //
     }
 
     /**
@@ -94,9 +81,9 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SasaranKerjaPegawai $dashboard)
+    public function edit($id)
     {
-        return view('edit', compact('dashboard'));
+        //
     }
 
     /**
@@ -108,19 +95,7 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama' => 'required',
-            'nip' => 'required',
-            'jabatan' => 'required'
-        ]);
-        $skp = SasaranKerjaPegawai::find($id);
-        $skp->nama = $request->nama;
-        $skp->nip = $request->nip;
-        $skp->jabatan = $request->jabatan;
-        // $skp->user_id = $request->user_id;
-        $skp->save();
-
-        return redirect()->route('dashboard');
+        //
     }
 
     /**
@@ -131,7 +106,6 @@ class AtasanPejabatPenilaiDashboardController extends Controller
      */
     public function destroy($id)
     {
-        $skp->delete();
-        return redirect()->route('dashboard');
+        //
     }
 }

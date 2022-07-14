@@ -89,7 +89,7 @@ class PenilaianKinerjaIKUController extends Controller
         $iku->nama = $request->nama;
         $iku->nip = $request->nip;
         $iku->iku = $request->iku;
-        $iku->penilaian = $request->penilaian;
+        $iku->penilaian_iku = $request->penilaian_iku;
         $iku->save();
         return redirect()->route('penilaian.iku.dashboard');
     }
