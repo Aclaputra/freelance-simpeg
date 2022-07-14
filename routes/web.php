@@ -193,3 +193,8 @@ Route::resource('kepala_urusan_kepegawaian/dashboard', KepalaUrusanKepegawaianDa
     ->name('edit', 'kepala_urusan_kepegawaian.edit')
     ->name('update', 'kepala_urusan_kepegawaian.update')
     ->name('destroy', 'kepala_urusan_kepegawaian.destroy');
+
+Route::controller(KepalaUrusanKepegawaianDashboardController::class)->group(function() {        
+    Route::get('skp-export', 'export')->name('skp.export');
+});
+
