@@ -390,7 +390,7 @@
                               {{ $data->nip }}
                             </td>
                             <td> {{ $data->perilaku }} </td>
-                            <td> {{ $data->penilaian }}</td>
+                            <td> {{ $data->penilaian_perilaku }}</td>
                             <td>
                               <a href="{{ url('pejabat_penilai/dashboard/komponen_penilaian_pekerjaan/perilaku/' . $data->id . '/edit') }}">
                                 <button type="button" class="btn btn-outline-primary">Ubah</button>
